@@ -42,6 +42,7 @@ func main() {
 	watch, err := clientset.AppsV1beta1().Deployments(namespace).Watch(metav1.ListOptions{
 		LabelSelector: label,
 	})
+
 	if err != nil {
 		log.Fatal(err.Error())
 	}
@@ -49,6 +50,7 @@ func main() {
 	list, err := clientset.AppsV1beta1().Deployments(namespace).List(metav1.ListOptions{
 		LabelSelector: label,
 	})
+
 	if err != nil {
 		log.Fatal(err.Error())
 	}
